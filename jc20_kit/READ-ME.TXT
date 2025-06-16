@@ -1,0 +1,50 @@
+
+This READ-ME pertains to the Java Card API 2.0 Reference
+Implementation, Developer Release 2 (JC2RIDR2-P.zip) release of
+20 February 1998.
+
+* Copyright (c) 1998 Sun Microsystems, Inc. All Rights Reserved.
+
+This software package is subject to license restrictions in
+term and use. Please see the text of the full License Agreement
+as provided in the file LICENSE.PDF for details.
+
+Source code related to cryptography is not included in this
+release due to US export regulations.
+
+--------------
+The Java Card API 2.0 Reference Implementation, Developer
+Release 2 is a package containing the Java Card API v2.0 class
+files as well as sample code and simple tools to allow the
+creation and execution of Java Card applets in a desktop Java
+Virtual Machine environment. It is intended as a pre-release to
+allow interested parties to become familiar with Java Card 2.0
+technology and programming methodologies.
+
+Given the pre-release nature of this package, we will not be
+providing support service, but are interested in your feedback
+and comments. Please send your comments to:
+   <javacard@java.sun.com>
+
+Please read the Release Notes (Release-Notes-DR2.pdf)
+and the Java Card 2.0 Reference Implementation User's Guide
+(JC2RI-Users-Guide.pdf in the 'doc' directory) for complete
+information about this release. All documentation files are in
+Adobe Acrobat '.pdf' format. Acrobat Reader is available 
+as a free download from Adobe Systems' website, 
+<http://www.adobe.com>.
+
+---------------
+Contents of JC2RIDR2-P.zip:
+
+- Java Card 2.0 Reference Implementation Developer's Release 2
+- Java Card 2.0 Reference Implementation User's Guide
+- Sample applets
+- The Java Card Checker
+- Java Card Checker User's Guide
+
+Also included is a file, JC20API-update.pdf, that contains
+proposed updates for the Java Card API 2.0 specification. Java
+Card licensees are currently reviewing these minor updates. The
+full Java Card 2.0 specification suite is downloadable from 
+the Java Card web page, <http://java.sun.com/products/javacard>.

@@ -1,0 +1,373 @@
+<html>
+
+<head>
+<title>Release Notes - Java Card(TM) Development Kit Version 2.2_01 Binary Release</title>
+<style type="text/css">
+<!--
+      body { background-color: #FFFFFF; font-family: Arial, Helvetica, sans-serif;
+             border-top-width: 0px; border-right-width: 0px;
+             border-bottom-width: 0px; border-left-width: 0px}
+      h1 { font-family: Arial, Helvetica, sans-serif}
+      h2 { font-family: Arial, Helvetica, sans-serif; padding-top: 25px}
+      h3 { font-family: Arial, Helvetica, sans-serif}
+      h4 { font-family: Arial, Helvetica, sans-serif}
+      li { font-family: Arial, Helvetica, sans-serif}
+      table { font-family: Arial, Helvetica, sans-serif;
+                background-color: #FFFFFF;
+                margin-top: 0px; padding-top: 0px;
+		border-top-width: 0px; border-right-width: 0px;
+		border-bottom-width: 0px; border-left-width: 0px;
+		margin-bottom: 10px; margin-left: 0px;
+		padding-bottom: 5px; padding-left: 5px}
+      td {  vertical-align: top; font-family: Arial, Helvetica, sans-serif}
+      td h1 {  text-align: center}
+      td h2 {  text-align: center; padding-top: 0px}
+      td h4 {  text-align: center}
+      th { font-family: Arial, Helvetica, sans-serif; text-align: left;
+           padding-top: 10px; padding-right: 10px; padding-bottom: 0px;
+	   padding-left: 10px; white-space: nowrap}
+
+      .sun-darkblue { font-family: Arial, Helvetica, sans-serif ;
+                      color: #FFFFFF; background-color: #666699}
+      .sun-lightblue { background-color: #9999CC}
+      .nav-link {  font-family: Arial, Helvetica, sans-serif; font-size: x-small}
+      .copyright {  font-family: Arial, Helvetica, sans-serif; font-size: small}
+-->
+</style>
+</head>
+
+<body>
+
+<table width=100% cellspacing=0 cellpadding=0 border=0
+       summary="This table is for formatting purposes only.">
+  <tr>
+    <td class=sun-darkblue>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class=sun-darkblue>
+      <h1>Release Notes</h1>
+      <h2>Java Card<sup>TM</sup> Development Kit<br>
+        Version 2.2_01 Binary Release</h2>
+      <h4>September, 2002</h4>
+    </td>
+  </tr>
+  <tr>
+    <td class=sun-lightblue>&nbsp;</td>
+  </tr>
+</table>
+
+<br>
+
+<p class=nav-link>[<a href="#_maincontent">Skip TOC</a>]</p>
+<h2><a name="_top"></a>Table of Contents</h2>
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#new_features">New Features and Improvements</a></li>
+  <ul type="disc">
+    <li><a href="#object_deletion">Object Deletion Mechanism</a></li>
+    <li><a href="#package_deletion">Package Deletion</a></li>
+    <li><a href="#applet_deletion">Applet Deletion</a></li>
+    <li><a href="#remote_method">Remote Method Invocation</a></li>
+    <li><a href="#logical_channel">Logical Channel Support</a> </li>
+    <li><a href="#conversion_verification">Conversion Verification</a></li>
+    <li><a href="#cryptography_support">Cryptography Support <em>(Development 
+      Kit with Cryptography Extensions only)</em></a></li>
+  </ul>
+  <li><a href="#documentation_roadmap">Documentation Roadmap</a></li>
+  <li><a href="#known_bugs_and_issues">Known Bugs and Issues</a></li>
+  <!--
+  <ol type="i">
+    <li><a href="#software_limitations">Software Limitations</a></li>
+  </ol>
+-->
+  <ol>
+    <a name="introduction"></a> <a name="_maincontent"></a> 
+    <h2> 
+      <li>Introduction</li>
+    </h2>
+    <p>The Java Card<sup>TM</sup> 2.2 Development Kit tools run on a workstation 
+      using a Java Virtual Machine (VM). The Java Card 2.2 Virtual Machine is 
+      written in the &quot;C&quot; programming language. Separate bundles for 
+      the Solaris&reg; and Windows NT&reg; versions are available for this release. 
+      For more details on the reference implementation, please refer to the User's 
+      Guide that is installed with the Java Card 2.2 Development Kit. </p>
+    <p>The issues discussed in these Release Notes pertain to both the Java Card 
+      2.2_01 Development Kit Binary Release and the Java Card 2.2_01 Development 
+      Kit Binary Release with Cryptography Extensions. </p>
+    <p>Issues that are marked <em>(Development Kit with Cryptography Extensions 
+      only)</em> pertain only to the Java Card 2.2_01 Development Kit Binary Release 
+      with Cryptography Extensions.</p>
+    <h3>Version 2.2_01 Update Release Information</h3>
+    <p>The Java Card version 2.2_01 Update Release corrects an error in the original 
+      version 2.2 API specification of the signature of the <tt>javacard.security.KeyAgreement.generateSecret</tt> 
+      method. As a result of the update, the content of the following files have 
+      changes since the original Java Card Development Kit version 2.2 release: 
+    </p>
+    <ul>
+      <li><tt>KeyAgreement.java</tt>&#151;the <tt>KeyAgreement</tt> class with 
+        the corrected signature for <tt>generateSecret</tt>. The contents of this 
+        source file have changed for both the cryptographic extensions release 
+        and non-cryptographic extensions release.</li>
+      <li><tt>api.jar</tt>&#151;jar file that contains the Java Card API. The 
+        contents of this file have changed for both the cryptographic extensions 
+        release and non-cryptographic extensions release.</li>
+      <li><tt>security.exp</tt>&#151;corrected export file for the<tt> javacard.security</tt> 
+        package. This package contains the <tt>KeyAgreement</tt> class.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>The following file in the Java Card 2.2 Specification download has also 
+      been modified :</p>
+    <ul>
+      <li><tt>JavaCard22API.pdf</tt>&#151;the corrected version of the API specification 
+        for Java Card 2.2. The API specification is now &quot;Revision 1.1&quot;.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <h4>Updating an Existing Java Card 2.2 Release</h4>
+    <p>If you have downloaded Java Card version 2.2_01 only to update an existing 
+      Java Card version 2.2 release, you must copy the files listed below to their 
+      appropriate locations in the file system. Note that the 2.2_01 release retains 
+      the same directory structure as the 2.2 release. </p>
+    <p>In the paths listed below, the UNIX path separator &quot;/&quot; is used. 
+      If you are replacing files on the Windows platform, replace &quot;/&quot; 
+      with &quot;\&quot;. All instances of the files, especially <tt>security.exp</tt>, 
+      must be replaced. </p>
+    <p></p>
+    <ul>
+      <li><tt>KeyAgreement.java</tt>&#151;If you are using the source release, 
+        copy this file to the <tt>java_card_kit-2_2/src/share/Java/api/javacard/security</tt> 
+        directory. If you are using the source release <em>with</em> cryptographic 
+        extensions, you must also copy this file to <tt>java_card_kit-2_2/src/withcrypto/share/java/api/javacard/security</tt>.</li>
+      <li><tt>api.jar</tt>&#151;Copy the 2.2_01 version of this file to the <tt>java_card_kit-2_2/lib</tt> 
+        directory. </li>
+      <li><tt>security.exp</tt>&#151;Copy the 2.2_01 version of this file to the 
+        <tt>java_card_kit-2_2/api_export_files/javacard/security/javacard/</tt> 
+        directory. </li>
+      <li><tt>JavaCard22API.pdf</tt>&#151;Copy the 2.2_01 version of this file 
+        to the <tt>jcspecs2.2/specs</tt> directory.</li>
+    </ul>
+    <p><a name="product_description"></a></p>
+    <p>[<a href="#_top">Top</a>] <a name="new_features"></a> </p>
+    <h2> 
+      <li>New Features and Improvements</li>
+    </h2>
+    <ul type="disc">
+      <li><a name="object_deletion"></a>Object Deletion Mechanism</li>
+      <p>Object Deletion Mechanism feature lets you reclaim memory which is being 
+        used by &quot;unreachable&quot; objects. </p>
+      <li><a name="package_deletion"></a>Package Deletion </li>
+      <p>Package deletion lets you remove all of a package's code from the card's 
+        memory. This feature is not supported in JCWDE. </p>
+      <li><a name="applet_deletion"></a>Applet Deletion</li>
+      <p>Applet deletion lets you delete up to eight applets simultaneously, including 
+        all of their child objects, from Java Card's memory. This feature is not 
+        supported in JCWDE. </p>
+      <li><a name="remote_method"></a>Remote Method Invocation</li>
+      <p>You can write RMI applications for the Java Card platform. You can develop 
+        RMI applets that run on the card and RMI client applications that run 
+        on a Card Acceptance Device (CAD) terminal which supports a J2SE or J2ME 
+        platform. This feature is not supported in JCWDE. </p>
+      <li><a name="logical_channel"></a>Logical Channel Support </li>
+      <p>This release of Java Card 2.2 reference implementation has the ability 
+        to support up to three logical channels. This gives an ISO 7816-4-compliant 
+        terminal the ability to open up to three sessions into a smart card using 
+        the reference implementation, one session per logical channel.</p>
+      <li><a name="conversion_verification"></a> Conversion Verification <br>
+        &nbsp; <br>
+        <ul>
+          <li> 
+            <p>The converter now invokes the verifier to verify the export files 
+              it reads in, and also checks for the validity of the CAP file and 
+              export file it outputs. If the CAP file being generated is inconsistent, 
+              it reports appropriate errors and does not actually generate the 
+              CAP file. </p>
+          </li>
+          <li> 
+            <p> There is a <tt>-noverify</tt> command line option that allows 
+              it to bypass verification. </p>
+          </li>
+        </ul>
+      </li>
+      <li><a name="cryptography_support"></a>Cryptography Support <em>(Development 
+        Kit with Cryptography Extensions only)</em></li>
+      <p>Java Card 2.2 provides an implementation of basic security and cryptography 
+        classes. Both C-JCRE and JCWDE support the following encryption algorithm 
+        implementations:</p>
+      <ul>
+        <li>MessageDigest &#151; SHA-1 (SHA)</li>
+        <li>Random Data &#151; pseudo random number generator</li>
+      </ul>
+      <p>Signature and Cipher support for RSA and DES with the following implementation 
+        details:</p>
+      <ul>
+        <li>Key Length &#151; 64-bit DES, 128-bit DES3, 512-bit RSA</li>
+        <li>Signature &#151; DES MAC8 Signature with ISO 9797 M2 Padder, <br>
+          RSA Signature with SHA Message Digest and PKCS1 encoding format</li>
+        <li>Cipher &#151; DES Cipher Block Chaining with ISO 9797 M2 Padder, <br>
+          RSA Cipher with PKCS1 encoding format</li>
+      </ul>
+    </ul>
+    [<a href="#_top">Top</a>] <a name="documentation_roadmap"></a> 
+    <h2> 
+      <li>Documentation Roadmap</li>
+    </h2>
+    <p>Documentation for the Java Card 2.2 Development Kit can be found in the 
+      Development Kit product download and the Specification download.</p>
+    <p>These documents (in PDF format) are included in the product download:</p>
+    <ul>
+      <li> 
+        <p><strong>Java Card<sup>TM</sup> 2.2 Development Kit User's Guide</strong> 
+          describes the reference implementation. It is targeted at developers 
+          who are creating applets using the Java Card 2.2 Application Programming 
+          Interface (Sun Microsystems, Inc., 2002), and also at developers who 
+          are considering creating a vendor-specific framework based on the Java 
+          Card 2.2 technology specifications.</p>
+      </li>
+      <li> 
+        <p><strong>Java Card<sup>TM</sup> 2.2 Application Programming Notes</strong> 
+          contains tips and guidelines for the applet developer who is using the 
+          new features of Java Card 2.2 such as applet and package deletion, object 
+          deletion, logical channels, and RMI. It is also for developers who are 
+          considering creating a vendor-specific framework based on the Java Card 
+          2.2 technology specifications.</p>
+      </li>
+      <li> 
+        <p><strong>Java Card<sup>TM</sup> 2.2 RMI Client Application Programming 
+          Interface</strong> describes the Java Card RMI client-side architecture 
+          and API.</p>
+      </li>
+      <li> 
+        <p><strong>Java Card<sup>TM</sup> 2.2 Off-Card Verifier</strong> describes 
+          the Java Card 2.2 Off-Card Verifier. The Off-Card Verifier provides 
+          functionality for verifying CAP files and export files. When applied 
+          to the set of CAP files that will reside on a Java Card-compliant smartcard 
+          and to the set of export files used to construct those CAP files, the 
+          Off-Card Verifier provides the means to assert that the content of the 
+          smartcard has been verified.</p>
+      </li>
+    </ul>
+    <p>These documents (in PDF format) are included in the specification download: 
+    </p>
+    <ul>
+      <li> 
+        <p><strong>Java Card<sup>TM</sup> 2.2 Application Programming Interface, 
+          Revision 1.1</strong> provides the documentation for the Java Card API.</p>
+      </li>
+      <li> 
+        <p><strong>Java Card<sup>TM</sup> 2.2 Virtual Machine Specification</strong> 
+          assists developers in creating an implementation, developing a specification 
+          to extend the Java Card technology specifications, or in creating an 
+          extension to the Java Card Runtime Environment (JCRE).</p>
+      </li>
+      <li> 
+        <p><strong>Java Card<sup>TM</sup> 2.2 Runtime Environment (JCRE) Specification</strong> 
+          is intended to assist JCRE implementors in creating an implementation, 
+          developing a specification to extend the Java Card technology specifications, 
+          or in creating an extension to the Java Card Runtime Environment (JCRE).</p>
+      </li>
+    </ul>
+    [<a href="#_top">Top</a>] <a name="known_bugs_and_issues"></a> 
+    <h2> 
+      <li>Known Bugs and Issues</li>
+    </h2>
+    <p>This section describes software and documentation limitations.</p>
+    <!--
+  <ol type="i">
+    <li><a href="#software_limitations">Software Limitations</a></li>
+  </ol>
+  <p><a name="software_limitations"></a> </p>
+
+  <H3>Software Limitations</H3>
+    -->
+    <h4>Static Blank Finals Limitations</h4>
+    <p>Static blank finals cannot be initialized in initialization blocks. These 
+      initializations must be inlined. </p>
+    <h4> Object Deletion Mechanism Limitations</h4>
+    <p>The number of objects that can be deleted using the Object Deletion Mechanism 
+      in the C-JCRE is restricted by the amount of transaction space available. 
+      In case Object Deletion Mechanism is invoked and there are more objects 
+      to be deleted than can be handled by the deletion mechanism, the implementation 
+      will throw an error and terminate the card session.</p>
+    <h4>Applet/Package Deletion Limitations</h4>
+    <p>Since Applet and Package Deletion in the C-JCRE depend on the Object Deletion 
+      Mechanism, the limitation on Object Deletion Mechanism may also affect these 
+      features.</p>
+    <h4>Java Card 2.2 Development Kit User's Guide Does Not Use the 2.2_01 Release 
+      Download Zip File Names</h4>
+    <p>For the Java Card 2.2_01 Release, the name of the zip that contains the 
+      installation files has changed. The Java Card 2.2 Development Kit User's 
+      Guide, however, uses the download file names for the original 2.2 release. 
+      The following table lists: </p>
+    <ul>
+      <li>the release type, whether it is source or binary, Solaris or Windows, 
+        and whether it contains cryptographic extensions</li>
+      <li>the names used for the zip files in the 2.2 release Development Kit 
+        User's Guide</li>
+      <li>the actual names of the 2.2_01 release zip files</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>This table also contains the name of the specification download zip file 
+      for the 2.2 release and the 2.2_01 release.</p>
+    <table>
+      <tr> 
+        <th class=sun-verylightblue scope="col" width="236">Release</th>
+        <th class=sun-verylightblue scope="col" width="283">Download File Name 
+          used in the Java Card 2.2 Release Development Kit Users Guide</th>
+        <th class=sun-verylightblue scope="col" width="302">Actual Download File 
+          Name for the Java Card 2.2_01 Release</th>
+      </tr>
+      <tr> 
+        <td width="236"> Binary release for Solaris, <em>without</em> cryptographic 
+          extensions</td>
+        <td width="283"> <tt>java_card_kit-2_2-solsparc-gl.zip</tt></td>
+        <td width="302"><tt>java_card_kit-2_2_01-solsparc-gl.zip</tt></td>
+      </tr>
+      <tr> 
+        <td width="236">Binary release for Windows, <em>without</em> cryptographic 
+          extensions</td>
+        <td width="283"><tt>java_card_kit-2_2-win-gl.zip</tt></td>
+        <td width="302"><tt>java_card_kit-2_2_01-win-gl.zip</tt></td>
+      </tr>
+      <tr> 
+        <td width="236">Binary release for Solaris, <em>with</em> cryptographic 
+          extensions</td>
+        <td width="283"><tt>java_card_kit-2_2-solsparc-dom.zip</tt></td>
+        <td width="302"><tt>java_card_kit-2_2_01-solsparc-dom.zip</tt></td>
+      </tr>
+      <tr> 
+        <td width="236">Binary release for Windows, <em>with</em> cryptographic 
+          extensions</td>
+        <td width="283"><tt>java_card_kit-2_2-win-dom.zip</tt></td>
+        <td width="302"><tt>java_card_kit-2_2_01-win-dom.zip</tt></td>
+      </tr>
+      <tr> 
+        <td width="236">Source release, <em>without</em> cryptographic extensions</td>
+        <td width="283"><tt>java_card_kit-2_2-src-gl.zip</tt></td>
+        <td width="302"> 
+          <p><tt>java_card_kit-2_2_01-src-gl.zip</tt></p>
+        </td>
+      </tr>
+      <tr> 
+        <td width="236">Source release, <em>with</em> cryptographic extensions</td>
+        <td width="283"><tt>java_card_kit-2_2-src-dom.zip</tt></td>
+        <td width="302"><tt>java_card_kit-2_2_01-src-dom.zip</tt></td>
+      </tr>
+      <tr> 
+        <td width="236">Specification release</td>
+        <td width="283"><tt>java_card_kit-2_2-spec.zip</tt></td>
+        <td width="302"><tt>java_card_kit-2_2_01-spec.zip</tt></td>
+      </tr>
+      <tr> 
+        <td colspan=3> 
+          <hr class=pTableHr />
+        </td>
+      </tr>
+    </table>
+    [<a href="#_top">Top</a>] 
+  </ol>
+  <hr noshade>
+  <p>End of Release Notes</p>
+  <p class=copyright>Copyright &#169; 2002 Sun Microsystems, Inc. All rights reserved. 
+  </p>
+</ol>
+</body>
+</html>
